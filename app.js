@@ -10,6 +10,7 @@ const game = () => {
 
         playBtn.addEventListener('click', () => {
             introScreen.classList.add('fadeOut'); // Fade out intro screen when we play
+            match.classList.add('fadeIn');
         });
     };
 
