@@ -32,6 +32,7 @@ const game = () => {
                 const computerChoice = computerOptions[computerNumber];
                 //console.log(computerChoice); // random computer options  
                 // We call compareHands() here  
+                compareHands();
             });
         });
     };
@@ -52,11 +53,33 @@ const game = () => {
             if(computerChoice === 'scissors'){
                 winner.textContent = 'You win!';
                 return;
-            } else {
+            } else  { // computer has paper
                 winner.textContent = 'Computer wins!';
                 return;
             }
-        }
+        };
+
+        // Check for paper
+        if(playerChoice === 'paper'){
+            if(computerChoice === 'scissors'){
+                winner.textContent = 'Computer wins!';
+                return;
+            } else  { // computer has rock
+                winner.textContent = 'You win!';
+                return;
+            }
+        };
+
+        // Check for scissors
+        if(playerChoice === 'scissors'){
+            if(computerChoice === 'rock'){
+                winner.textContent = 'Computer wins!';
+                return;
+            } else  { // computer has paper
+                winner.textContent = 'You win!';
+                return;
+            }
+        };
     };
 
     // Call inner functions
