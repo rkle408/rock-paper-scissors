@@ -32,7 +32,11 @@ const game = () => {
                 const computerChoice = computerOptions[computerNumber];
                 //console.log(computerChoice); // random computer options  
                 // We call compareHands() here  
-                compareHands();
+                compareHands(this.textContent, computerChoice);
+
+                // Update images
+                playerHand.src = `./assets/${this.textContent}.png`;
+                computerHand.src = `./assets/${computerChoice}.png`;
             });
         });
     };
