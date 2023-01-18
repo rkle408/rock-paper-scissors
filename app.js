@@ -41,6 +41,13 @@ const game = () => {
         });
     };
 
+    const updateScore = () => {
+        const playerScore = document.querySelector('.player-score p');
+        const computerScore = document.querySelector('.computer-score p');
+        playerScore.textContent = pScore;
+        computerScore.textContent = cScore;
+    }
+
     // Comparison function, feed choice we made to compare computer choice
     const compareHands = (playerChoice, computerChoice) => {
         // Update text
@@ -56,9 +63,13 @@ const game = () => {
         if(playerChoice === 'rock'){
             if(computerChoice === 'scissors'){
                 winner.textContent = 'You win!';
+                pScore++;
+                updateScore();
                 return;
             } else  { // computer has paper
                 winner.textContent = 'Computer wins!';
+                cScore++;
+                updateScore();
                 return;
             }
         };
@@ -67,9 +78,13 @@ const game = () => {
         if(playerChoice === 'paper'){
             if(computerChoice === 'scissors'){
                 winner.textContent = 'Computer wins!';
+                cScore++;
+                updateScore();
                 return;
             } else  { // computer has rock
                 winner.textContent = 'You win!';
+                pScore++;
+                updateScore();
                 return;
             }
         };
@@ -78,9 +93,13 @@ const game = () => {
         if(playerChoice === 'scissors'){
             if(computerChoice === 'rock'){
                 winner.textContent = 'Computer wins!';
+                cScore++;
+                updateScore();
                 return;
             } else  { // computer has paper
                 winner.textContent = 'You win!';
+                pScore++;
+                updateScore();
                 return;
             }
         };
